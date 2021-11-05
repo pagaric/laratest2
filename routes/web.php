@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,9 @@ Route::get('/articles', [ArticleController::class, 'showListArticles'])->name('a
 
 // route vers un article
 Route::get('/article/{n}', [ArticleController::class, 'show'])->where('n', '[0-9]+')->name('article');
+
+// route pour la demande du formulaire
+Route::get('/users', [UsersController::class, 'create'])->name('users.create');
+
+// route pour la soumission du formulaire
+Route::post('/users', [UsersController::class, 'store'])->name('users.store');
