@@ -18,7 +18,11 @@ class UsersController extends Controller
             'prenom' => 'required'
         ]);
 
-        return 'Bonjour ' .$request->input('nom'). ' !';
+        session()->flash('success', 'Formulaire validé');
+
+        return view('infos2', ['nom' => $request->input('nom')]);
+
+        // return 'Bonjour ' .$request->input('nom'). ' !';
         // dd($request->all());
     }
 }

@@ -13,4 +13,7 @@ Articles
         <li><a href="{{ route('article', ['n' => $k]) }}">Article de {{ $nom }}</a></li>
     @endforeach
 </ul>
+
+
+{{dd(session())}}
 @endsection

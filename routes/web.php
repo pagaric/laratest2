@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\EmpController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/employees', [EmpController::class, 'listEmployees'])->name('emp.list');
+
+
+
+Route::get('/employee', [EmpController::class, 'selectEmp'])->name('emp.select');
+Route::post('/employee', [EmpController::class, 'getEmpByName'])->name('emp.detail');
+
+
+
 // Route::get('/', function(){
 //     return view('welcome');
 // });
+
+Route::get('/flashdep', function(){
+    return view('depart');
+})->name('depart');
+
+Route::get('/flasharr', function(){
+    return view('arrivee');
+})->name('arrivee');
 
 // route accueil
 Route::get('/', [ArticleController::class, 'index'])->name('accueil');
