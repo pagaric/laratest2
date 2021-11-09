@@ -12,16 +12,22 @@ class Emp extends Model
 
     protected $table = 'emp';
 
-    public function getAll()
+    public function getAllName()
     {
-        return DB::select('SELECT * FROM emp');
-        // return DB::select('SELECT * FROM ' .$this->table);
+        return DB::select('SELECT ename FROM emp');
     }
 
     public function getEmpByName($n)
     {
         return DB::select('SELECT * FROM emp WHERE ename = ?', [$n]);
     }
+    
+    public function getAll()
+    {
+        return DB::select('SELECT * FROM emp');
+        // return DB::select('SELECT * FROM ' .$this->table);
+    }
+
 
     // public function getAllEmpInfos($a1, $a2)
     // {

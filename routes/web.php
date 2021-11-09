@@ -23,6 +23,9 @@ Route::get('/employees', [EmpController::class, 'listEmployees'])->name('emp.lis
 Route::get('/employee', [EmpController::class, 'selectEmp'])->name('emp.select');
 Route::post('/employee', [EmpController::class, 'getEmpByName'])->name('emp.detail');
 
+Route::get('/empselect', [EmpController::class, 'empSel'])->name('empSelect');
+Route::post('/enpselect', [EmpController::class, 'empSelByName'])->name('empByName');
+
 
 
 // Route::get('/', function(){
